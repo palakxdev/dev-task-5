@@ -1,0 +1,21 @@
+/* my fovorite fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* common styles */
+h1 {
+    color: #A56714;
+}
+
+body {
+    background-color: #ddc589;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* another styles */
+.saving-bg {
+    background-color: #AD7416;
+}
+
+/* .saving-bg2 {
+    background-color: #ff9100;
+} */
