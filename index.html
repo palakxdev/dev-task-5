@@ -19,7 +19,7 @@
     </header>
     <main>
         <div class="container mb-4">
-            <div class="row g-5">
+            <div class="row g-4 p-2">
                 <div class="col-lg-6 col-sm-12">
                     <img class="img-fluid" src="img/calculate-your-income.png" alt="">
                 </div>
@@ -32,7 +32,7 @@
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label text-white fw-bold">Income:</label>
                         <div class="col-sm-12 col-lg-8">
-                            <input type="text" class="form-control">
+                            <input id="user-income" type="text" class="form-control">
                         </div>
                     </div>
                     <!--------------
@@ -42,7 +42,7 @@
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label text-white fw-bold">Food:</label>
                         <div class="col-sm-12 col-lg-8">
-                            <input type="text" class="form-control">
+                            <input id="food-expense" type="text" class="form-control">
                         </div>
                     </div>
 
@@ -50,47 +50,50 @@
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label text-white fw-bold">Rent:</label>
                         <div class="col-sm-12 col-lg-8">
-                            <input type="text" class="form-control">
+                            <input id="rent-expense" type="text" class="form-control">
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label text-white fw-bold">Clothes:</label>
                         <div class="col-sm-12 col-lg-8">
-                            <input type="text" class="form-control">
+                            <input id="cloth-expense" type="text" class="form-control">
                         </div>
                     </div>
                     <!-----------------------------
                     calculate income and Expenses 
                     ------------------------------>
                     <div class="text-center">
-                        <button type="button" class="btn btn-outline-light text-center">Calculate</button>
+                        <button id="calculate-button" type="button"
+                            class="btn btn-outline-light text-center">Calculate</button>
                     </div>
-                    <h4 class="text-white text-center mt-3">Total Expenses: <span>5500</span></h4>
-                    <h4 class="text-white text-center mt-3 mb-4">Balance: <span>4500</span></h4>
+                    <h4 class="text-white text-center mt-3">Total Expenses: <span id="total-expenses">5500</span></h4>
+                    <h4 class="text-white text-center mt-3 mb-4">Balance: <span id="balance">4500</span></h4>
                     <!------------
                     start Savings 
                     -------------->
                     <div>
-                        <div class="row mb-3">
+                        <div class="mb-3">
                             <div class="d-flex justify-content-evenly">
                                 <label class="col-sm-2 col-form-label text-white fw-bold">Save:</label>
                                 <div class="col-sm-12 col-lg-4">
-                                    <input type="text" class="form-control">
+                                    <input id="save-input" type="text" class="form-control">
                                 </div>
                                 <div>
                                     <p class="text-white">%</p>
                                 </div>
 
                                 <div class="text-center">
-                                    <button type="button" class="btn btn-outline-light text-center">Calculate</button>
+                                    <button id="save-button" type="button"
+                                        class="btn btn-outline-light text-center">Calculate</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <h4 class="text-white text-center mt-4">Saving Amount: <span>2000</span></h4>
-                    <h4 class="text-white text-center mt-3 mb-4">Remaining Balance: <span>2500</span></h4>
+                    <h4 class="text-white text-center mt-4">Saving Amount: <span id="saving-amount">2000</span></h4>
+                    <h4 class="text-white text-center mt-3 mb-4">Remaining Balance: <span
+                            id="after-saving-balance">2500</span></h4>
                 </div>
             </div>
     </main>
