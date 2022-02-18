@@ -64,11 +64,14 @@
                     calculate income and Expenses 
                     ------------------------------>
                     <div class="text-center">
+                        <small id="validation-error" class="custom-error">Please enter valid and positive
+                            number!!!</small>
+                        <br>
                         <button id="calculate-button" type="button"
                             class="btn btn-outline-light text-center">Calculate</button>
                     </div>
-                    <h4 class="text-white text-center mt-3">Total Expenses: <span id="total-expenses">5500</span></h4>
-                    <h4 class="text-white text-center mt-3 mb-4">Balance: <span id="balance">4500</span></h4>
+                    <h4 class="text-white text-center mt-3">Total Expenses: <span id="total-expenses">00</span></h4>
+                    <h4 class="text-white text-center mt-3 mb-4">Balance: <span id="balance">00</span></h4>
                     <!------------
                     start Savings 
                     -------------->
@@ -88,12 +91,17 @@
                                         class="btn btn-outline-light text-center">Calculate</button>
                                 </div>
                             </div>
+                            <br>
+                            <p id="validation-error2" class="custom-error">Please enter valid and positive
+                                number!!!</p>
+                            <br>
+                            <p id="validation-error3" class="custom-error">You can't save more than your balance!!!</p>
                         </div>
                     </div>
 
-                    <h4 class="text-white text-center mt-4">Saving Amount: <span id="saving-amount">2000</span></h4>
+                    <h4 class="text-white text-center mt-2">Saving Amount: <span id="saving-amount">00</span></h4>
                     <h4 class="text-white text-center mt-3 mb-4">Remaining Balance: <span
-                            id="after-saving-balance">2500</span></h4>
+                            id="after-saving-balance">00</span></h4>
                 </div>
             </div>
     </main>

@@ -16,8 +16,14 @@ body {
 }
 
 /*-------------
-another styles
+  other styles
 ---------------*/
 .saving-bg {
     background-color: #AD7416;
+}
+
+.custom-error {
+    color: rgb(163, 29, 29);
+    display: none;
+    text-align: center;
 }

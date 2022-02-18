@@ -1,49 +1,59 @@
-
-
-
-
+//function for catch, convert and use user input value
+function userInput(inputId) {
+    const userInput = document.getElementById(inputId).value;
+    const userInputValue = parseInt(userInput);
+    return userInputValue;
+}
 
 document.getElementById('calculate-button').addEventListener('click', function () {
+    //all user input
+    const userInputValue = userInput('user-income');
+    const userFoodExpenseValue = userInput('food-expense');
+    const userRentExpenseValue = userInput('rent-expense');
+    const userClothExpenseValue = userInput('cloth-expense');
 
-    const userInput = document.getElementById('user-income').value;
-    const userInputValue = parseInt(userInput);
+    if (userInputValue > 0 && userFoodExpenseValue > 0 && userRentExpenseValue > 0 && userClothExpenseValue > 0) {
+        //determine total expense and amount balance
+        const totalExpense = userFoodExpenseValue + userRentExpenseValue + userClothExpenseValue;
+        const newBalance = userInputValue - totalExpense;
+        //set total expense into the total expense field
+        const totalExpenses = document.getElementById('total-expenses');
+        totalExpenses.innerText = totalExpense;
+        //set amount balance into the amount balance field
+        const balance = document.getElementById('balance');
+        balance.innerText = newBalance;
+        const totalBalance = parseInt(newBalance);
 
-    const userFoodExpense = document.getElementById('food-expense').value;
-    const userFoodExpenseValue = parseInt(userFoodExpense);
+        //saving calculation
+        document.getElementById('save-button').addEventListener('click', function () {
+            //user input for saving
+            const saveInputValue = userInput('save-input');
 
-    const userRentExpense = document.getElementById('rent-expense').value;
-    const userRentExpenseValue = parseInt(userRentExpense);
+            if (saveInputValue > 0) {
+                //calculate saving amount
+                const userSaving = (userInputValue * saveInputValue) / 100;
 
-    const userClothExpense = document.getElementById('cloth-expense').value;
-    const userClothExpenseValue = parseInt(userClothExpense);
+                if (totalBalance > userSaving) {
+                    //set saving amount value into the saving amount field
+                    const savingAmountText = document.getElementById('saving-amount');
+                    savingAmountText.innerText = userSaving;
+                    //calculate remaining amount
+                    const amountBalance = totalBalance - userSaving;
+                    //set remaining amount into the Remaining Balance field
+                    const afterSavingAmountText = document.getElementById('after-saving-balance');
+                    afterSavingAmountText.innerText = amountBalance;
+                }
+                else {
+                    document.getElementById('validation-error3').style.display = 'block';
+                }
 
-
-    const totalExpense = userFoodExpenseValue + userRentExpenseValue + userClothExpenseValue;
-    const newBalance = userInputValue - totalExpense;
-
-    const totalExpenses = document.getElementById('total-expenses');
-    totalExpenses.innerText = totalExpense;
-
-    const balance = document.getElementById('balance');
-    balance.innerText = newBalance;
-    const totalBalance = parseInt(newBalance);
-
-    //saving calculation
-    document.getElementById('save-button').addEventListener('click', function () {
-        const saveInput = document.getElementById('save-input');
-        const saveInputText = saveInput.value;
-        const saveInputValue = parseFloat(saveInputText);
-
-        const userSaving = (totalBalance * saveInputValue) / 100;
-        const savingAmountText = document.getElementById('saving-amount');
-        savingAmountText.innerText = userSaving;
-
-        const amountBalance = totalBalance - userSaving;
-        const afterSavingAmountText = document.getElementById('after-saving-balance');
-        afterSavingAmountText.innerText = amountBalance;
-
-        // console.log(userSaving)
-    })
-
-    // console.log(totalBalance);
+            }
+            else {
+                document.getElementById('validation-error2').style.display = 'block';
+            }
+        })
+    }
+    else {
+        document.getElementById('validation-error').style.display = 'block';
+    }
 });
